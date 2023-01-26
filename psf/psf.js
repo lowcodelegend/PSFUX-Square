@@ -1,6 +1,6 @@
 const LOGO_CELL_NAME = 'LogoCell';
-const KPI_VIEW_AREA_ITEM_NAME = 'GTM Process Homepage Area Item2';
-const REQUEST_LIST_AREA_ITEM_NAME = 'Generic.PSF.Homepage Area Item1';
+const KPI_VIEW_AREA_ITEM_NAME = 'KPIs';
+const REQUEST_LIST_AREA_ITEM_NAME = 'Requests';
 const HEADER_AREA_ITEM_NAME = 'Header';
 const SEARCH_BAR_CONTROL_NAME = "Auto-Complete";
 
