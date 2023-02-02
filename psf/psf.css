@@ -71,7 +71,7 @@
 .theme-entry.psf div.sidebar {
     width: var(--sidebar-width);
     box-shadow: 10px 10px 15px 0px var(--sidebar-shadow-color);
-    position: absolute;
+    position: fixed;
     height: calc(100% - 20px);
     top: 0;
     left: 0;
