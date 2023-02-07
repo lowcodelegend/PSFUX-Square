@@ -10,7 +10,7 @@ $(document).ready(function() {
 });
 
 
-isModile = () => $('body').hasClass("mobile");
+isMobile = () => $('body').hasClass("mobile");
 
 enableTheme = () => {
     $('body').addClass('psf');
