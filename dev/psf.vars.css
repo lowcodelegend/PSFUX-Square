@@ -24,6 +24,7 @@ body.theme-entry .psf,
 .theme-entry #pgInnerPanel .view-canvas>.panel,
 .theme-entry .form-tabs>.tab-box-body .view-canvas>.panel,
 .theme-entry #pgTabContent .view-canvas>.panel {
+    --drawer-handler-width: 5rem;
     --sidebar-width: 250px;
     --sidebar-width-ratio: 1%;
     --sidebar-background-color: #191e31;
