@@ -9,6 +9,9 @@ $(document).ready(function() {
     render();
 });
 
+
+isModile = () => $('body').hasClass("mobile");
+
 enableTheme = () => {
     $('body').addClass('psf');
     $('form').addClass('psf');
@@ -18,15 +21,15 @@ enableTheme = () => {
 
 render = () => {
     renderHeader();
-    renderSidebar();
+    renderNavigation();
     renderKPIs();
     renderSearchBox();
 }
 
+renderNavigation = () => isMobile() ? renderDrawer() : renderSidebar();
+
 renderSidebar = () => {
     const sidebar = $("<div id='sidebar' class='sidebar'></div>");
-    $('.runtime-content').parent().append(sidebar);
-    $('.runtime-content').addClass('with-sidebar');
     let logoSpan = $('span[name="' + LOGO_CELL_NAME + '"]');
     logoSpan.addClass('logo');
     $('<div id="logo" class="logo">' + logoSpan.html() + '</div>').prependTo($('#sidebar'));
@@ -36,6 +39,8 @@ renderSidebar = () => {
         $('.sidebar-tabs').append($('ul.tab-box-tabs'));
         $('a.tab').append('<div class="sidebar-border"><span class="top"></span><span class="bottom"></span></div>');
     }
+    $('.runtime-content').parent().append(sidebar);
+    $('.runtime-content').addClass('with-sidebar');
 }
 
 renderKPIs = () => {
@@ -88,6 +93,30 @@ renderHeader = () => {
 
 renderSearchBox = () => {
     $('div[name="' + SEARCH_BAR_CONTROL_NAME + '"]').addClass('search-control');
+}
+
+renderDrawer = () => {
+    var headerView = $('header')
+    headerView.insertBefore(".runtime-content");
+    headerView.after("<div class='header-placeholder'></div>");
+    var headerPlaceholder = $('.header-placeholder');
+
+    // sticky header
+
+    var headerOffset = 0;
+    $(window).scroll(function() {
+        if (headerOffset === 0) {
+            headerOffset = headerView.height();
+            headerPlaceholder.height(headerOffset);
+        }
+        if (window.pageYOffset >= headerOffset) {
+            headerView.addClass('fixed');
+            headerPlaceholder.css({ display: 'block' });
+        } else {
+            headerView.removeClass('fixed');
+            headerPlaceholder.css({ display: 'none' });
+        }
+    });
 }
 
 /*
