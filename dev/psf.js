@@ -8,10 +8,8 @@ const SEARCH_BAR_CONTROL_NAME = "Auto-Complete";
 isMobile = () => $('html').hasClass("mobile");
 
 $(document).ready(function () {
-    if (!isMobile()) {
-        enableTheme();
-        render();
-    }
+    enableTheme();
+    render();
 });
 
 
@@ -24,7 +22,9 @@ enableTheme = () => {
 
 render = () => {
     renderHeader();
-    renderNavigation();
+    if (!isMobile()) {
+        renderNavigation();
+    }
     renderKPIs();
     renderSearchBox();
 }
