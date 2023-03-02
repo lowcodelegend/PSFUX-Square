@@ -372,6 +372,19 @@
     background-color: white;
 }
 
+.mobile .theme-entry.psf div.kpi div.card {
+    grid-template-columns: 0px auto auto;
+    grid-template-rows: auto auto;
+    display: inline-grid;
+    border: 1px white solid!important;
+    border-radius: 10px;
+    padding: 0.5rem;
+    box-shadow: 0px 0px 0.1rem 0.1rem #c0c0c0;
+    /* margin: 0.3rem; */
+    overflow: visible;
+    background-color: white;
+}
+
 .theme-entry.psf div.kpi div.card.actions,
 .theme-entry.psf div.kpi div.card.actions * {
     cursor: pointer;
@@ -386,6 +399,10 @@
 .theme-entry.psf div.kpi .root-table.editor-grid>.editor-cell.lastcellinrow {
     padding-right: 0px;
     padding-left: 0px;
+}
+
+.mobile .theme-entry.psf div.kpi div.card .kpi-label {
+    display: none;
 }
 
 .theme-entry.psf div.kpi div.card .kpi-label {
@@ -426,6 +443,18 @@
     padding-left: 0px!important;
 }
 
+.mobile .theme-entry.psf div.kpi div.card .kpi-number span {
+    /* font-size: unset!important; */
+    /* border: 1px solid red; */
+    width: 100%!important;
+    text-align: center!important;
+    margin: 0px!important;
+    padding-top: 0px!important;
+    padding-right: 0.1rem!important;
+    min-width: 3.5rem;
+    font-size: 3rem!important;
+}
+
 .theme-entry.psf div.kpi div.card .kpi-icon {
     grid-column-start: 3!important;
     grid-column-end: 3!important;
@@ -441,10 +470,18 @@
     display: none;
 }
 
+.theme-entry.psf div.kpi div.card {
+    justify-content: center;
+}
+
 .theme-entry.psf div.kpi div.card .kpi-icon:after {
     font-family: 'Material Symbols Outlined';
     font-size: 50px;
     font-variation-settings: 'FILL' 0, 'wght' 700, 'GRAD' 0, 'opsz' 48;
+}
+
+.mobile .theme-entry.psf div.kpi div.card .kpi-icon:after {
+    font-size: rem;
 }
 
 .theme-entry.psf div.kpi div.card.active .kpi-icon:after {
@@ -499,6 +536,10 @@
     align-content: center;
     display: inline-flex;
     flex-wrap: wrap;
+}
+
+.mobile .theme-entry.psf div.kpi div.card .kpi-text {
+    display: none;
 }
 
 .theme-entry.psf div.kpi div.card .kpi-text {
