@@ -16,6 +16,10 @@
     display: none;
 }
 
+.mobile .theme-entry.psf form {
+    padding: 15px
+}
+
 
 /* material icons styles */
 
@@ -181,8 +185,8 @@
 }
 
 .mobile .theme-entry.psf div.sidebar ul.tab-box-tabs>li>a.tab>span.tab-wrapper {
-    width:100%;
-    text-align:center;
+    width: 100%;
+    text-align: center;
 }
 
 .theme-entry.psf div.sidebar ul.tab-box-tabs>li>a.tab span.tab-text {
@@ -762,8 +766,8 @@
     font-size: var(--page-subtitle-text-size);
 }
 
-.theme-entry.psf .header span[name='LogoCell'] {
-    /*display:none;*/
+.theme-entry.psf .header span[name='LogoCell']>span img {
+    width: 100%;
 }
 
 .theme-entry.psf .header .panel-body-wrapper div[name="tblLargeHeader"] {
