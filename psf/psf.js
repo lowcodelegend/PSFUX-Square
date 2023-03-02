@@ -4,10 +4,16 @@ const REQUEST_LIST_AREA_ITEM_NAME = 'Requests';
 const HEADER_AREA_ITEM_NAME = 'Header';
 const SEARCH_BAR_CONTROL_NAME = "Auto-Complete";
 
+
+isMobile = () => $('html').hasClass("mobile");
+
 $(document).ready(function() {
-    enableTheme();
-    render();
+    if (!isMobile()) {
+        enableTheme();
+        render();
+    }
 });
+
 
 enableTheme = () => {
     $('body').addClass('psf');
@@ -16,26 +22,32 @@ enableTheme = () => {
     $('.runtime-form').addClass('psf');
 }
 
-render = () => {
+render = () => {  
     renderHeader();
-    renderSidebar();
+    renderNavigation();
     renderKPIs();
     renderSearchBox();
 }
 
+renderNavigation = () => isMobile() ? renderDrawer() : renderSidebar();
+
 renderSidebar = () => {
     const sidebar = $("<div id='sidebar' class='sidebar'></div>");
-    $('.runtime-content').parent().append(sidebar);
+    //$('.runtime-content').parent().append(sidebar);
+    $('.runtime-content').append(sidebar);
     $('.runtime-content').addClass('with-sidebar');
-    let logoSpan = $('span[name="' + LOGO_CELL_NAME + '"]');
-    logoSpan.addClass('logo');
-    $('<div id="logo" class="logo">' + logoSpan.html() + '</div>').prependTo($('#sidebar'));
-    $('div.logo').height($('div.header').height())
+    if (!isMobile) {
+        let logoSpan = $('span[name="' + LOGO_CELL_NAME + '"]');
+        logoSpan.addClass('logo');
+        $('<div id="logo" class="logo">' + logoSpan.html() + '</div>').prependTo($('#sidebar'));
+        $('div.logo').height($('div.header').height())
+    };
     if ($('ul.tab-box-tabs').length > 0) {
         $('#sidebar').append('<div id="tabs" class="sidebar-tabs">')
         $('.sidebar-tabs').append($('ul.tab-box-tabs'));
         $('a.tab').append('<div class="sidebar-border"><span class="top"></span><span class="bottom"></span></div>');
     }
+
 }
 
 renderKPIs = () => {
@@ -88,6 +100,63 @@ renderHeader = () => {
 
 renderSearchBox = () => {
     $('div[name="' + SEARCH_BAR_CONTROL_NAME + '"]').addClass('search-control');
+}
+
+renderMobileHeader = () => {
+    var headerView = $('.header')
+    headerView.after("<div class='header-placeholder'></div>");
+    headerView.insertBefore(".runtime-content");
+    var headerPlaceholder = $('.header-placeholder');
+
+    // sticky header
+
+    var headerOffset = 0;
+    $(window).scroll(function() {
+        if (headerOffset === 0) {
+            headerOffset = headerView.height();
+            headerPlaceholder.height(headerOffset);
+        }
+        if (window.pageYOffset >= headerOffset) {
+            headerView.addClass('fixed');
+            headerPlaceholder.css({ display: 'block' });
+        } else {
+            headerView.removeClass('fixed');
+            headerPlaceholder.css({ display: 'none' });
+        }
+    });
+}
+
+renderSlider = () => {
+    var imageHtmlCollapsed = '<span class="material-symbols-outlined">menu</span>';
+    var imageHtmlExpanded = '<span class="material-symbols-outlined">menu_open</span>';
+    var sidebar = $("#sidebar")
+    var html = '<div id="sidebar-handler" class="sidebar-handler">' + imageHtmlCollapsed + '</div>'
+    sidebar.append(html)
+    var slider = $("#sidebar").slideReveal({
+        push: false,
+        position: "left",
+        width: "50%",
+        overlay: true,
+        overlayColor: "transparent",
+        trigger: $("#sidebar-handler"),
+        // trigger: $("#sbm4k2-dev-sidebar-handler"),
+        shown: function(obj) {
+            obj.find("#sidebar-handler").html(imageHtmlExpanded);
+            obj.addClass("left-shadow-overlay");
+            $("#sidebar-handler").addClass('expanded');
+        },
+        hidden: function(obj) {
+            obj.find("#sidebar-handler").html(imageHtmlCollapsed);
+            obj.removeClass("left-shadow-overlay");
+            $("#sidebar-handler").removeClass('expanded');
+        }
+    });
+}
+
+renderDrawer = () => {
+    renderMobileHeader();
+    renderSidebar();
+    renderSlider();
 }
 
 /*
