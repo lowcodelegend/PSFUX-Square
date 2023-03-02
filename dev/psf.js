@@ -7,7 +7,7 @@ const SEARCH_BAR_CONTROL_NAME = "Auto-Complete";
 
 isMobile = () => $('html').hasClass("mobile");
 
-$(document).ready(function() {
+$(document).ready(function () {
     if (!isMobile()) {
         enableTheme();
         render();
@@ -22,7 +22,7 @@ enableTheme = () => {
     $('.runtime-form').addClass('psf');
 }
 
-render = () => {  
+render = () => {
     renderHeader();
     renderNavigation();
     renderKPIs();
@@ -36,7 +36,7 @@ renderSidebar = () => {
     //$('.runtime-content').parent().append(sidebar);
     $('.runtime-content').append(sidebar);
     $('.runtime-content').addClass('with-sidebar');
-    if (!isMobile) {
+    if (!isMobile()) {
         let logoSpan = $('span[name="' + LOGO_CELL_NAME + '"]');
         logoSpan.addClass('logo');
         $('<div id="logo" class="logo">' + logoSpan.html() + '</div>').prependTo($('#sidebar'));
@@ -111,7 +111,7 @@ renderMobileHeader = () => {
     // sticky header
 
     var headerOffset = 0;
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         if (headerOffset === 0) {
             headerOffset = headerView.height();
             headerPlaceholder.height(headerOffset);
@@ -140,12 +140,12 @@ renderSlider = () => {
         overlayColor: "transparent",
         trigger: $("#sidebar-handler"),
         // trigger: $("#sbm4k2-dev-sidebar-handler"),
-        shown: function(obj) {
+        shown: function (obj) {
             obj.find("#sidebar-handler").html(imageHtmlExpanded);
             obj.addClass("left-shadow-overlay");
             $("#sidebar-handler").addClass('expanded');
         },
-        hidden: function(obj) {
+        hidden: function (obj) {
             obj.find("#sidebar-handler").html(imageHtmlCollapsed);
             obj.removeClass("left-shadow-overlay");
             $("#sidebar-handler").removeClass('expanded');
