@@ -784,11 +784,20 @@
     justify-content: left!important;
 }
 
+.mobile .theme-entry.psf .header .panel-body-wrapper div[name="tblLargeHeader"]>span[col="1"][row="1"]>div>span[col='2'][row='1']>div>span {
+    justify-content: center!important;
+}
+
 .theme-entry.psf .header .panel-body-wrapper div[name="tblLargeHeader"]>span[col="2"][row="1"]>div {
     width: 100%;
     grid-template-columns: auto auto auto!important;
     grid-template-rows: 2rem 3rem!important;
     justify-content: flex-end;
+    background-color: red
+}
+
+.mobile .theme-entry.psf .header .panel-body-wrapper div[name="tblLargeHeader"]>span[col="2"][row="1"]>div {
+    display: none;
 }
 
 .theme-entry.psf .header .panel-body-wrapper div[name="tblLargeHeader"]>span[col="2"][row="1"]>div * {
