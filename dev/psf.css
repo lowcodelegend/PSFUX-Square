@@ -19,8 +19,12 @@
 }
 
 .mobile .theme-entry.psf form {
-    padding: 15px;
+    /* padding: 15px; */
     overflow: auto!important;
+    /* padding-bottom: 0px; */
+    /* padding-top: 0px; */
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .mobile .theme-entry.psf .tab-box.tabs-top ul.tab-box-tabs {
@@ -154,8 +158,8 @@
 }
 
 .mobile .theme-entry.psf .runtime-content.with-sidebar {
-    margin-left: 50px!important;
-    margin-right: 20px!important;
+    margin-left: 0px!important;
+    margin-right: 0px!important;
 }
 
 .theme-entry.psf div.sidebar {
@@ -231,6 +235,10 @@
 
 .theme-entry.psf div.sidebar ul.tab-box-tabs>li>a.tab.selected {
     border-radius: 50px 0px 0px 50px;
+}
+
+.mobile .theme-entry.psf div.sidebar ul.tab-box-tabs>li>a.tab.selected {
+    border-radius: 50px 50px 50px 50px;
 }
 
 .mobile .theme-entry.psf div.sidebar ul.tab-box-tabs>li>a.tab.selected .sidebar-border {

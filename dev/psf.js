@@ -6,11 +6,18 @@ const SEARCH_BAR_CONTROL_NAME = "Auto-Complete";
 
 const MOBILE_HEADER_HEIGHT = 100;
 
+detectClicks = () => {
+    $(document).click(function (event) {
+        console.log(event.target)
+    });
+}
+
 isMobile = () => $('html').hasClass("mobile");
 
 $(document).ready(function () {
     enableTheme();
     render();
+    //    detectClicks();
 });
 
 enableTheme = () => {
@@ -22,7 +29,7 @@ enableTheme = () => {
 
 render = () => {
     renderHeader();
-    // renderNavigation();
+    renderNavigation();
     renderKPIs();
     renderSearchBox();
 }
@@ -31,7 +38,6 @@ renderNavigation = () => isMobile() ? renderDrawer() : renderSidebar();
 
 renderSidebar = () => {
     const sidebar = $("<div id='sidebar' class='sidebar'></div>");
-    //$('.runtime-content').parent().append(sidebar);
     $('.runtime-content').append(sidebar);
     $('.runtime-content').addClass('with-sidebar');
     if (!isMobile()) {
@@ -106,24 +112,17 @@ renderSearchBox = () => {
 
 renderMobileHeader = () => {
     var headerView = $('.header')
-    headerView.after("<div class='header-placeholder'></div>");
-    var headerPlaceholder = $('.header-placeholder');
-
-    // sticky header
 
     var headerOffset = 0;
     $('form').scroll(function () {
         var currentPos = $('form').scrollTop()
         if (headerOffset === 0) {
-            headerOffset = MOBILE_HEADER_HEIGHT;
-            headerPlaceholder.height(headerOffset);
+            headerOffset = headerView.height() / 2;
         }
         if (currentPos >= headerOffset) {
             headerView.addClass('fixed');
-            headerPlaceholder.css({ display: 'block' });
         } else {
             headerView.removeClass('fixed');
-            headerPlaceholder.css({ display: 'none' });
         }
     });
 }
@@ -137,7 +136,7 @@ renderSlider = () => {
     var slider = $("#sidebar").slideReveal({
         push: false,
         position: "left",
-        width: "50%",
+        width: "70%",
         overlay: true,
         overlayColor: "transparent",
         trigger: $("#sidebar-handler"),
@@ -153,10 +152,10 @@ renderSlider = () => {
             $("#sidebar-handler").removeClass('expanded');
         }
     });
+    $('span.tab-text').click(() => slider.slideReveal("hide"));
 }
 
 renderDrawer = () => {
-    renderMobileHeader();
     renderSidebar();
     renderSlider();
 }
