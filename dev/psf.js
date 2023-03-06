@@ -4,6 +4,7 @@ const REQUEST_LIST_AREA_ITEM_NAME = 'Requests';
 const HEADER_AREA_ITEM_NAME = 'Header';
 const SEARCH_BAR_CONTROL_NAME = "Auto-Complete";
 
+const MOBILE_HEADER_HEIGHT = 100;
 
 isMobile = () => $('html').hasClass("mobile");
 
@@ -11,7 +12,6 @@ $(document).ready(function () {
     enableTheme();
     render();
 });
-
 
 enableTheme = () => {
     $('body').addClass('psf');
@@ -22,9 +22,7 @@ enableTheme = () => {
 
 render = () => {
     renderHeader();
-    if (!isMobile()) {
-        renderNavigation();
-    }
+    // renderNavigation();
     renderKPIs();
     renderSearchBox();
 }
@@ -96,6 +94,10 @@ renderListView = () => {
 
 renderHeader = () => {
     $('div[name="' + HEADER_AREA_ITEM_NAME + '"]').closest('.view').addClass('header');
+    $('span[name="' + LOGO_CELL_NAME + '"]').addClass('logo');
+    if (isMobile()) {
+        renderMobileHeader();
+    }
 }
 
 renderSearchBox = () => {
@@ -105,18 +107,18 @@ renderSearchBox = () => {
 renderMobileHeader = () => {
     var headerView = $('.header')
     headerView.after("<div class='header-placeholder'></div>");
-    headerView.insertBefore(".runtime-content");
     var headerPlaceholder = $('.header-placeholder');
 
     // sticky header
 
     var headerOffset = 0;
-    $(window).scroll(function () {
+    $('form').scroll(function () {
+        var currentPos = $('form').scrollTop()
         if (headerOffset === 0) {
-            headerOffset = headerView.height();
+            headerOffset = MOBILE_HEADER_HEIGHT;
             headerPlaceholder.height(headerOffset);
         }
-        if (window.pageYOffset >= headerOffset) {
+        if (currentPos >= headerOffset) {
             headerView.addClass('fixed');
             headerPlaceholder.css({ display: 'block' });
         } else {
