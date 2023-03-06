@@ -20,6 +20,14 @@
     padding: 15px
 }
 
+.mobile .theme-entry.psf .tab-box.tabs-top ul.tab-box-tabs {
+    overflow-x: hidden;
+}
+
+.mobile .theme-entry.psf form.file-input {
+    overflow: hidden!important;
+}
+
 
 /* material icons styles */
 
@@ -203,12 +211,19 @@
     border: 1px var(--page-background-color) solid;
 }
 
-.theme-entry.psf div.sidebar ul.tab-box-tabs>li>a.tab.selected {
-    border-radius: 50px 0px 0px 50px;
+.mobile .theme-entry.psf ul.tab-box-tabs>li>a.tab.selected {
+    color: var(--sidebar-background-color);
+    background-color: var(--page-background-color);
+    border-bottom: 2px var(--input-button-text-color) solid;
 }
 
-.mobile .theme-entry.psf div.sidebar ul.tab-box-tabs>li>a.tab.selected {
-    border-radius: 50px 50px 50px 50px;
+.mobile .theme-entry.psf ul.tab-box-tabs {
+    /* border-bottom: 1px var(--input-button-text-color) solid; */
+    padding-bottom: 1rem;
+}
+
+.theme-entry.psf div.sidebar ul.tab-box-tabs>li>a.tab.selected {
+    border-radius: 50px 0px 0px 50px;
 }
 
 .mobile .theme-entry.psf div.sidebar ul.tab-box-tabs>li>a.tab.selected .sidebar-border {
@@ -614,6 +629,11 @@
 
 /* list views */
 
+.mobile .theme-entry.psf .toolbar-wrapper div.SFC.SourceCode-Forms-Controls-Web-Table.Grid-Layout {
+    /* border:1px solid red!important; */
+    grid-template-columns: 1fr 1fr!important;
+}
+
 .theme-entry.psf .form.toolbars,
 .theme-entry.psf #pgInnerPanel.toolbars,
 .theme-entry.psf .form-tabs>.tab-box-body .toolbars,
@@ -621,9 +641,28 @@
     font-size: 1.5rem;
 }
 
+.mobile .theme-entry.psf .form.toolbars,
+.mobile .theme-entry.psf #pgInnerPanel.toolbars,
+.mobile .theme-entry.psf .form-tabs>.tab-box-body .toolbars,
+.mobile .theme-entry.psf #pgTabContent.toolbars {
+    font-size: 1.2rem;
+}
+
+.theme-entry.psf div.toolbar-wrapper div.input-control.text-input.control-group-container div.input-control-m-c {
+    border: none!important;
+}
+
+.theme-entry.psf div.toolbar-wrapper div.input-control.text-input.control-group-container div.input-control-m-c .stack-container {
+    display: block;
+}
+
 .theme-entry.psf .toolbar-wrapper {
     padding-top: 1rem;
     padding-bottom: 1.5rem;
+}
+
+.mobile .theme-entry.psf .toolbar-button {
+    border-right: none;
 }
 
 .theme-entry.psf .toolbar-button {
@@ -712,6 +751,10 @@
     min-width: 2.1rem
 }
 
+.mobile .theme-entry.psf div.grid-footer div.toolbar-wrapper {
+    display: none;
+}
+
 .theme-entry.psf div.grid-footer div.toolbar-wrapper {
     display: inline-grid;
     grid-template-columns: 10px 10px 0px 10px 10px 0px;
@@ -795,6 +838,11 @@
 
 .theme-entry.psf .header * {
     background-color: transparent!important;
+}
+
+.theme-entry.psf .header h1 {
+    color: var(--page-title-text-color);
+    font-size: var(--page-title-text-size);
 }
 
 .theme-entry.psf .header h1 {
