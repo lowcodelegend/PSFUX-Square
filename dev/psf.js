@@ -17,7 +17,7 @@ isMobile = () => $('html').hasClass("mobile");
 $(document).ready(function () {
     enableTheme();
     render();
-    //    detectClicks();
+    // detectClicks();
 });
 
 enableTheme = () => {
@@ -152,6 +152,7 @@ renderSlider = () => {
             $("#sidebar-handler").removeClass('expanded');
         }
     });
+    $('span.tab-text').attr('role', 'button');
     $('span.tab-text').click(() => slider.slideReveal("hide"));
 }
 
