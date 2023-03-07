@@ -4,16 +4,21 @@ const REQUEST_LIST_AREA_ITEM_NAME = 'Requests';
 const HEADER_AREA_ITEM_NAME = 'Header';
 const SEARCH_BAR_CONTROL_NAME = "Auto-Complete";
 
+const MOBILE_HEADER_HEIGHT = 100;
+
+detectClicks = () => {
+    $(document).click(function (event) {
+        console.log(event.target)
+    });
+}
 
 isMobile = () => $('html').hasClass("mobile");
 
 $(document).ready(function () {
-    if (!isMobile()) {
-        enableTheme();
-        render();
-    }
+    enableTheme();
+    render();
+    //    detectClicks();
 });
-
 
 enableTheme = () => {
     $('body').addClass('psf');
@@ -33,7 +38,6 @@ renderNavigation = () => isMobile() ? renderDrawer() : renderSidebar();
 
 renderSidebar = () => {
     const sidebar = $("<div id='sidebar' class='sidebar'></div>");
-    //$('.runtime-content').parent().append(sidebar);
     $('.runtime-content').append(sidebar);
     $('.runtime-content').addClass('with-sidebar');
     if (!isMobile()) {
@@ -96,6 +100,10 @@ renderListView = () => {
 
 renderHeader = () => {
     $('div[name="' + HEADER_AREA_ITEM_NAME + '"]').closest('.view').addClass('header');
+    $('span[name="' + LOGO_CELL_NAME + '"]').addClass('logo');
+    if (isMobile()) {
+        renderMobileHeader();
+    }
 }
 
 renderSearchBox = () => {
@@ -104,24 +112,17 @@ renderSearchBox = () => {
 
 renderMobileHeader = () => {
     var headerView = $('.header')
-    headerView.after("<div class='header-placeholder'></div>");
-    headerView.insertBefore(".runtime-content");
-    var headerPlaceholder = $('.header-placeholder');
-
-    // sticky header
 
     var headerOffset = 0;
-    $(window).scroll(function () {
+    $('form').scroll(function () {
+        var currentPos = $('form').scrollTop()
         if (headerOffset === 0) {
-            headerOffset = headerView.height();
-            headerPlaceholder.height(headerOffset);
+            headerOffset = headerView.height() / 2;
         }
-        if (window.pageYOffset >= headerOffset) {
+        if (currentPos >= headerOffset) {
             headerView.addClass('fixed');
-            headerPlaceholder.css({ display: 'block' });
         } else {
             headerView.removeClass('fixed');
-            headerPlaceholder.css({ display: 'none' });
         }
     });
 }
@@ -135,7 +136,7 @@ renderSlider = () => {
     var slider = $("#sidebar").slideReveal({
         push: false,
         position: "left",
-        width: "50%",
+        width: "70%",
         overlay: true,
         overlayColor: "transparent",
         trigger: $("#sidebar-handler"),
@@ -151,10 +152,10 @@ renderSlider = () => {
             $("#sidebar-handler").removeClass('expanded');
         }
     });
+    $('span.tab-text').click(() => slider.slideReveal("hide"));
 }
 
 renderDrawer = () => {
-    renderMobileHeader();
     renderSidebar();
     renderSlider();
 }

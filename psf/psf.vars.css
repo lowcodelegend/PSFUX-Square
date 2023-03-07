@@ -39,14 +39,14 @@ body.theme-entry .psf,
     --button-font-family: "Montserrat", sans-serif;
     --page-subtitle-text-size: 2rem;
     --main-text-size: 1.5rem;
+    --page-title-text-size: 3em;
     --page-title-text-color: var(--normal-text-color);
     --page-subtitle-text-color: #919496;
+    --page-subtitle-text-size: 2em;
     --heading1-text-color: var(--page-title-text-color);
     --heading2-text-color: var(--page-subtitle-text-color);
     --view-header-text-color: var(--normal-text-color);
     --view-header-background-color: #f3f3f3;
-    --page-title-text-color: var(--normal-text-color);
-    --page-subtitle-text-color: #919496;
     --list-column-header-text-color: #black;
     --list-column-header-background-color: lightgrey;
     --list-item-background-color-odd-zebra: #white;
@@ -61,6 +61,39 @@ body.theme-entry .psf,
     --primary-button-hover-background-color: #6e728a;
     --primary-button-hover-border-color: #6e728a;
     --input-rounding: 1rem;
+}
+
+.mobile .theme-entry.psf,
+body.mobile.theme-entry .psf,
+.mobile .theme-entry.psf .form,
+.mobile .theme-entry.psf #pgInnerPanel,
+.mobile .theme-entry.psf .form-tabs>.tab-box-body,
+.mobile .theme-entry.psf #pgTabContent,
+.mobile .theme-entry.psf .view .innerpanel>.grid,
+.mobile .theme-entry.psf .view .innerpanel>.panel,
+.mobile .theme-entry.psf .view-canvas>.grid,
+.mobile .theme-entry.psf .view-canvas>.panel,
+.mobile .theme-entry .form .view .innerpanel>.grid,
+.mobile .theme-entry #pgInnerPanel .view .innerpanel>.grid,
+.mobile .theme-entry .form-tabs>.tab-box-body .view .innerpanel>.grid,
+.mobile .theme-entry #pgTabContent .view .innerpanel>.grid,
+.mobile .theme-entry .form .view .innerpanel>.panel,
+.mobile .theme-entry #pgInnerPanel .view .innerpanel>.panel,
+.mobile .theme-entry .form-tabs>.tab-box-body .view .innerpanel>.panel,
+.mobile .theme-entry #pgTabContent .view .innerpanel>.panel,
+.mobile .theme-entry .form .view-canvas>.grid,
+.mobile .theme-entry #pgInnerPanel .view-canvas>.grid,
+.mobile .theme-entry .form-tabs>.tab-box-body .view-canvas>.grid,
+.mobile .theme-entry #pgTabContent .view-canvas>.grid,
+.mobile .theme-entry .form .view-canvas>.panel,
+.mobile .theme-entry #pgInnerPanel .view-canvas>.panel,
+.mobile .theme-entry .form-tabs>.tab-box-body .view-canvas>.panel,
+.mobile .theme-entry #pgTabContent .view-canvas>.panel {
+    --page-subtitle-text-size: 2rem;
+    --main-text-size: 1.5rem;
+    --page-title-text-size: 3rem;
+    --page-subtitle-text-size: 1.5em;
+    --view-header-text-size: 2rem;
 }
 
 
