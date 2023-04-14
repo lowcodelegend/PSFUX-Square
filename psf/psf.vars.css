@@ -31,8 +31,8 @@ body.theme-entry .psf,
     /*--sidebar-shadow-color: # 585858; */
     --sidebar-label-color: var(--page-background-color);
     --sidebar-padding: 50px;
-    --form-background-color: #f3f3f3;
-    --page-background-color: #f3f3f3;
+    --form-background-color: #fff;
+    --page-background-color: #fff;
     --view-header-text-size: 2em;
     --main-font-family: "Montserrat", sans-serif;
     --heading-font-family: "Montserrat", sans-serif;
@@ -46,7 +46,8 @@ body.theme-entry .psf,
     --heading1-text-color: var(--page-title-text-color);
     --heading2-text-color: var(--page-subtitle-text-color);
     --view-header-text-color: var(--normal-text-color);
-    --view-header-background-color: #f3f3f3;
+    --view-header-background-color: #ffff;
+    --view-background-color: #fff;
     --list-column-header-text-color: #black;
     --list-column-header-background-color: #e4e4e4;
     --list-item-background-color-odd-zebra: #white;
