@@ -726,7 +726,7 @@
 }
 
 .theme-entry.psf .grid-column-headers {
-    padding: 10px;
+    padding: 0px;
     /* border-radius: 10px; */
     border-bottom: 1px solid transparent;
 }
