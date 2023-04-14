@@ -48,7 +48,7 @@ body.theme-entry .psf,
     --view-header-text-color: var(--normal-text-color);
     --view-header-background-color: #f3f3f3;
     --list-column-header-text-color: #black;
-    --list-column-header-background-color: lightgrey;
+    --list-column-header-background-color: #e4e4e4;
     --list-item-background-color-odd-zebra: #white;
     --list-item-background-color: #white;
     --list-item-background-color-even-zebra: #white;
