@@ -60,7 +60,7 @@ body.theme-entry .psf,
     --primary-button-border-color: #191e31;
     --primary-button-hover-background-color: #6e728a;
     --primary-button-hover-border-color: #6e728a;
-    --input-rounding: 1rem;
+    --input-rounding:  0rem;
 }
 
 .mobile .theme-entry.psf,
@@ -292,7 +292,7 @@ body.mobile.theme-entry .psf,
     --tree-item-selected-border-color: #00abf0;
     --tree-item-selected-text-color: white;
     --tree-item-focus-border-color: #00abf0;
-    --tree-item-rounding: 3px;
+    --tree-item-rounding:  0px;
     --chart-background-color: #c5cacd;
     --chart-border-color: #7c7c7c;
     --chart-header-background-color: transparent;
@@ -391,19 +391,19 @@ body.mobile.theme-entry .psf,
     --heading3-text-size: 1.8rem;
     --heading4-text-size: 1.6rem;
     --input-label-text-size: 1.4rem;
-    --popover-rounding: 5px;
-    --control-rounding: 3px;
-    --panel-rounding: 3px;
-    --view-rounding: 3px;
-    --menu-rounding: 5px;
-    --dialog-rounding: 5px;
-    --input-rounding: 3px;
-    --button-rounding: 3px;
-    --calendar-item-rounding: 3px;
-    --tooltip-rounding: 3px;
-    --tree-item-rounding: 3px;
-    --chart-rounding: 3px;
-    --tab-rounding: 3px;
+    --popover-rounding:  0px;
+    --control-rounding:  0px;
+    --panel-rounding:  0px;
+    --view-rounding:  0px;
+    --menu-rounding:  0px;
+    --dialog-rounding:  0px;
+    --input-rounding:  0px;
+    --button-rounding:  0px;
+    --calendar-item-rounding:  0px;
+    --tooltip-rounding:  0px;
+    --tree-item-rounding:  0px;
+    --chart-rounding:  0px;
+    --tab-rounding:  0px;
     --menu-background-effect: none;
     --dialog-background-effect: none;
     --content-inset-vertical-spacing: 2rem;
