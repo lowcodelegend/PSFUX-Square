@@ -234,11 +234,11 @@
 }
 
 .theme-entry.psf div.sidebar ul.tab-box-tabs>li>a.tab.selected {
-    border-radius: 50px 0px 0px 50px;
+    /* border-radius: 50px 0px 0px 50px; */
 }
 
 .mobile .theme-entry.psf div.sidebar ul.tab-box-tabs>li>a.tab.selected {
-    border-radius: 50px 50px 50px 50px;
+    /* border-radius: 50px 50px 50px 50px; */
 }
 
 .mobile .theme-entry.psf div.sidebar ul.tab-box-tabs>li>a.tab.selected .sidebar-border {
@@ -276,7 +276,7 @@
     width: 200%;
     height: 200%;
     position: absolute;
-    border-radius: 50%;
+    /* border-radius: 50%; */
 }
 
 .theme-entry.psf div.sidebar ul.tab-box-tabs>li>a.tab.selected .sidebar-border>span.bottom:before {
@@ -308,7 +308,7 @@
 
 .theme-entry.psf div.sidebar div.logo>img {
     background-color: var(--sidebar-label-color);
-    border-radius: 100px;
+    /* border-radius: 100px; */
     margin-top: 10px;
     /* margin-left:-25%; */
     margin-bottom: 10px;
@@ -394,7 +394,7 @@
     grid-template-rows: auto 47px;
     display: inline-grid;
     border: 1px white solid!important;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     padding: 20px;
     box-shadow: 0px 0px 10px 1px #c0c0c0;
     margin: 1rem;
@@ -407,7 +407,7 @@
     grid-template-rows: auto auto;
     display: inline-grid;
     border: 1px white solid!important;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     padding: 0.5rem;
     box-shadow: 0px 0px 0.1rem 0.1rem #c0c0c0;
     /* margin: 0.3rem; */
@@ -727,13 +727,13 @@
 
 .theme-entry.psf .grid-column-headers {
     padding: 10px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     border-bottom: 1px solid transparent;
 }
 
 .theme-entry.psf .grid-body {
     background-color: white;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     /* border-bottom: none; */
     /* border: none!important; */
 }
@@ -938,7 +938,7 @@
 
 .theme-entry.psf .dd-container {
     background-color: white!important;
-    border-radius: 1rem;
+    /* border-radius: 1rem; */
     padding: 1rem!important;
     margin: 1rem;
     box-shadow: 0px 0px 0.4rem #c0c0c0;
