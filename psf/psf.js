@@ -128,32 +128,41 @@ renderMobileHeader = () => {
     });
 }
 
-renderSlider = () => {
+function renderSlider() {
+    $("#sidebar").css("display", "none");
     var imageHtmlCollapsed = '<span class="material-symbols-outlined">menu</span>';
     var imageHtmlExpanded = '<span class="material-symbols-outlined">menu_open</span>';
-    var sidebar = $("#sidebar")
-    var html = '<div id="sidebar-handler" class="sidebar-handler">' + imageHtmlCollapsed + '</div>'
-    sidebar.append(html)
-    var slider = $("#sidebar").slideReveal({
-        push: false,
-        position: "left",
-        width: "70%",
-        overlay: true,
-        overlayColor: "transparent",
-        trigger: $("#sidebar-handler"),
-        // trigger: $("#sbm4k2-dev-sidebar-handler"),
-        shown: function (obj) {
-            obj.find("#sidebar-handler").html(imageHtmlExpanded);
-            obj.addClass("left-shadow-overlay");
-            $("#sidebar-handler").addClass('expanded');
-        },
-        hidden: function (obj) {
-            obj.find("#sidebar-handler").html(imageHtmlCollapsed);
-            obj.removeClass("left-shadow-overlay");
-            $("#sidebar-handler").removeClass('expanded');
-        }
+    var sidebarToggle = $("#sidebar-handler");
+
+    // Check if the sidebar handler exists, if not, create it
+    if (sidebarToggle.length === 0) {
+        var html = '<div id="sidebar-handler" class="sidebar-handler">' + imageHtmlCollapsed + '</div>';
+        $("#sidebar").before(html);
+        sidebarToggle = $("#sidebar-handler"); // Re-assign to the newly created element
+    }
+
+    //Close on tab click
+    $('span.tab-text').click(function() {
+        console.log('tab clicked');
+        $("#sidebar").css("display", "none");
+        $("#sidebar").removeClass("left-shadow-overlay");
     });
-    $('span.tab-text').click(() => slider.slideReveal("hide"));
+    
+    $('#sidebar-handler').click(function() {
+        console.log('clicked burger')
+        if($("#sidebar").css("display") === "none"){
+            $("#sidebar").css("display", "grid");
+            $("#sidebar").addClass("left-shadow-overlay");
+            var sidebarWidth = $("#sidebar").outerWidth();
+            $("#").css("margin-left", sidebarWidth + "px");
+        }
+        else
+        {
+            $("#sidebar").css("display", "none");
+            $("#sidebar").removeClass("left-shadow-overlay");
+            $("#").css("margin-left", "0px");
+        }
+    });    
 }
 
 renderDrawer = () => {
