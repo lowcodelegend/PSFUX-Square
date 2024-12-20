@@ -31,6 +31,10 @@
     overflow-x: hidden;
 }
 
+.theme-entry .popup, .theme-entry .dialog {
+    z-index: 2000!important;
+}
+
 .mobile .theme-entry.psf div.tab-box.tabs-top.form-tabs {
     z-index: 900;
 }
