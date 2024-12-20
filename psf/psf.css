@@ -31,7 +31,7 @@
     overflow-x: hidden;
 }
 
-.theme-entry .popup, .theme-entry .dialog .drop-menu{
+.theme-entry .popup, .theme-entry .dialog .theme-entry .drop-menu{
     z-index: 2000!important;
 }
 
