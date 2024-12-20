@@ -71,7 +71,7 @@
 .theme-entry.psf div.picker div.input-control-m-c,
 .theme-entry.psf div.input-control.lookup-box,
 .theme-entry.psf div.input-control.select-box {
-    height: 100%!important;
+    height: 40px!important;
 }
 
 .theme-entry.psf .SFC.SourceCode-Forms-Controls-Web-TextBox.readonly,
