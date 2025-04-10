@@ -62,6 +62,10 @@ body.theme-entry .psf,
     --primary-button-hover-background-color: #6e728a;
     --primary-button-hover-border-color: #6e728a;
     --input-rounding:  0rem;
+    --layout-cell-padding-top: 0px;
+    --layout-cell-padding-right: 0px;
+    --layout-cell-padding-bottom: 0px;
+    --layout-cell-padding-left: 0px;
 }
 
 .mobile .theme-entry.psf,
